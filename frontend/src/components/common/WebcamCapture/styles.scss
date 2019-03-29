@@ -1,0 +1,11 @@
+@import "../../../global/scss/config";
+
+.webcam-capture {
+  @include flex(column, flex-start, center);
+  width:100%;
+  max-width:700px;
+  .notice{
+    margin-bottom:24px;
+  }
+
+}

@@ -1,0 +1,46 @@
+@import '../../../global/scss/config';
+
+.app {
+  @include flex(column, flex-start, center);
+  @include pad-box(48px 24px);
+  @include max-size;
+
+  .header {
+    max-width:700px;
+    margin-bottom:24px;
+  }
+
+  .vaporize-me-daddy {
+    @include flex-center(column);
+    @include pad-box(12px);
+    max-width:700px;
+    width:100%;
+    margin: 24px 0;
+    background: #5d84e4;
+    color:white;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.vaporized-image {
+  width:100%;
+  max-width:700px;
+  height:100%;
+}
+
+.loading-app {
+  @include flex-center(column);
+  @include size(100vw, 100vh);
+
+  .text {
+    @include font(24px, 500, 0, $dark-gray)
+  }
+
+  .app-indeterminate-loader {
+    max-width: 300px;
+  }
+}
+

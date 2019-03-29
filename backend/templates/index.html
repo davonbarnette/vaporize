@@ -1,0 +1,16 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vaporize</title>
+</head>
+<body style="margin:0;">
+    <div id="root"></div>
+    {% render_bundle 'runtime~main' %}
+    {% render_bundle 'vendors' %}
+    {% render_bundle 'main' %}
+
+</body>
+</html>
