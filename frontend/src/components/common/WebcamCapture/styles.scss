@@ -4,6 +4,10 @@
   @include flex(column, flex-start, center);
   width:100%;
   max-width:700px;
+  & > video {
+    background:black;
+  }
+
   .notice{
     margin-bottom:24px;
   }

@@ -6,4 +6,4 @@ echo "===========> Moving static files" &&\
 python manage.py collectstatic --no-input &&\
 echo "===========> Done collecting static files" &&\
 echo "===========> Starting vaporize" &&\
-exec python manage.py runserver 0.0.0.0:8080
+exec python manage.py runserver 0.0.0.0:8000

@@ -14,6 +14,11 @@ def index(request):
         return render(request, 'index.html')
 
 
+def ping(request):
+    if request.method == 'GET':
+        return HttpResponse('Success', status=200)
+
+
 def upload(request):
     if request.method == 'POST' and request.POST.get('data'):
         data = request.POST.get('data')

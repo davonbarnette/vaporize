@@ -10,7 +10,7 @@ RUN ls -l /frontend/build
 
 FROM python:3.6.7
 
-EXPOSE 8080
+EXPOSE 8000
 
 WORKDIR /app
 COPY ./backend/requirements.txt .

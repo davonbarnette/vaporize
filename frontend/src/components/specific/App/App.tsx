@@ -27,7 +27,7 @@ class App extends Component<RouteComponentProps, any> {
                     【﻿ａｎ　ａｐｐｌｉｃａｔｉｏｎ　ｔｈａｔ　ｖａｐｏｒｗａｖｅｓ　ａ　ｗｅｂｃａｍ　ｐｉｃｔｕｒｅ，
 ｃｏｕｒｔｅｓｙ　ｏｆ】
                 </div>
-                <div className='header'>
+                <div className='courtesy'>
                     https://github.com/TimChinenov/VaporWaveArt
                 </div>
                 <WebcamCapture/>

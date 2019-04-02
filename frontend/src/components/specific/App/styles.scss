@@ -9,6 +9,11 @@
     max-width:700px;
     margin-bottom:24px;
   }
+  .courtesy {
+    max-width:700px;
+    margin-bottom:24px;
+    color:white;
+  }
 
   .vaporize-me-daddy {
     @include flex-center(column);

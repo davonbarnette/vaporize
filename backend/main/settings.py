@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import requests
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,8 +26,19 @@ SECRET_KEY = ')c4gs*tl99eb_tutc59+50b+rd2@11ml^q$y-4)x^!)lx5#7b3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [os.environ.get('DJANGO_HOST', 'localhost')]
 
+EC2_PRIVATE_IP = None
+try:
+    EC2_PRIVATE_IP = requests.get('http://169.254.169.254/latest/meta-data/local-ipv4', timeout=0.01).text
+except requests.exceptions.RequestException:
+    pass
+
+if EC2_PRIVATE_IP:
+    print('ec2', EC2_PRIVATE_IP)
+    ALLOWED_HOSTS.append(EC2_PRIVATE_IP)
+
+print('allowed', ALLOWED_HOSTS)
 
 # Application definition
 
@@ -118,10 +130,10 @@ AWS_LOCATION = 'static'
 
 STATICFILES_DIRS = (
     os.path.join('static'),
-    os.path.join('build')
 )
 
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATIC_URL = os.path.join('static/')
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Internationalization
