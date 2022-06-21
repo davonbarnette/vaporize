@@ -10,7 +10,7 @@ docutils==0.14
 get==2019.3.22
 idna==2.8
 jmespath==0.9.4
-numpy==1.16.2
+numpy==1.22.0
 opencv-python==4.0.0.21
 Pillow==5.4.1
 post==2019.3.22
